@@ -62,6 +62,27 @@ while True:
                movement = [1, 0]
      except:
           break
+
+       
+     try: 
+          if keyboard.is_pressed('a'):
+               movement = [1, 0]
+     except:
+          break
+
+       
+     try: 
+          if keyboard.is_pressed('s'):
+               movement = [1, 0]
+     except:
+          break
+
+       
+     try: 
+          if keyboard.is_pressed('d'):
+               movement = [1, 0]
+     except:
+          break
 placefruit()
 
 #Controls broken because of sleep line. Need fixing at later date.

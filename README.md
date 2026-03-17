@@ -1,4 +1,5 @@
-# Learning Python to code working Snake game
+# Snake
+Learning python to create snake
 
 # Languages
 

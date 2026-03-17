@@ -98,3 +98,4 @@ thread.join()
 placefruit()
 
 #controls working now and somewhat functional
+#print fruit function is now broken and not working

@@ -1,6 +1,8 @@
 import random
 import time
 import keyboard
+import threading
+import os
 #this makes the board function
 
 board = [
@@ -35,6 +37,39 @@ position = [
      5, 4
 ]
 
+def controls():
+     global movement
+     while True:
+          try: 
+               if keyboard.is_pressed('w'):
+                    movement = [-1, 0]
+          except:
+               break
+
+          
+          try: 
+               if keyboard.is_pressed('a'):
+                    movement = [0, -1]
+          except:
+               break
+
+          
+          try: 
+               if keyboard.is_pressed('s'):
+                    movement = [1, 0]
+          except:
+               break
+
+          
+          try: 
+               if keyboard.is_pressed('d'):
+                    movement = [0, 1]
+          except:
+               break
+
+
+thread = threading.Thread(target=controls)
+thread.start()
 
 while True:
      time.sleep(0.5)
@@ -54,35 +89,12 @@ while True:
 
      board[position[0]][position[1]] =2
      
+     os.system("cls")
+
      for i in board:
          print(i)
      
-     try: 
-          if keyboard.is_pressed('w'):
-               movement = [1, 0]
-     except:
-          break
-
-       
-     try: 
-          if keyboard.is_pressed('a'):
-               movement = [1, 0]
-     except:
-          break
-
-       
-     try: 
-          if keyboard.is_pressed('s'):
-               movement = [1, 0]
-     except:
-          break
-
-       
-     try: 
-          if keyboard.is_pressed('d'):
-               movement = [1, 0]
-     except:
-          break
+thread.join()
 placefruit()
 
-#Controls broken because of sleep line. Need fixing at later date.
+#controls working now and somewhat functional
